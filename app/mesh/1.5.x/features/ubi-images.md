@@ -2,9 +2,9 @@
 title: Red Hat Universal Base Images
 ---
 
-In addition to the standard Kong Mesh images build on Alipne Linux, Kong Mesh also ships with images based on [Red Hat Universal Base Image (UBI)](https://developers.redhat.com/products/rhel/ubi).
+In addition to the standard Kong Mesh images built on Alpine Linux, Kong Mesh also ships with images based on the [Red Hat Universal Base Image (UBI)](https://developers.redhat.com/products/rhel/ubi).
 
-Kong Mesh UBI images are distributed with all standard images, but with `ubi-` prefix.
+Kong Mesh UBI images are distributed with all standard images, but with `ubi-` prefix:
 
 * [kuma-dp UBI Image](https://hub.docker.com/r/kong/ubi-kuma-dp)
 * [kuma-cp UBI Image](https://hub.docker.com/r/kong/ubi-kuma-cp)
@@ -16,7 +16,7 @@ The base UBI variant for all images is `ubi-minimal`.
 
 ## Usage
 
-To use UBI images, we need to explicitly pass them when the control plane is installed
+To use UBI images, you need to explicitly pass them when the control plane is installed:
 
 {% navtabs %}
 {% navtab kumactl %}
@@ -27,7 +27,7 @@ kumactl install control plane \
   --dataplane-repository=ubi-kuma-dp
 ```
 {% endnavtab %}
-{% navtab HELM %}
+{% navtab Helm %}
 ```sh
 helm install kuma \
   --namespace kuma-system \
@@ -38,4 +38,5 @@ helm install kuma \
   --set kuma.kumactl.image.repository=ubi-kumactl \
   kuma/kuma
 ```
+{% endnavtab %}
 {% endnavtabs %}
